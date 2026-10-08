@@ -1,0 +1,22 @@
+1) Original split (0-based rows)
+   validation/test overlap : [400]
+   rows never used         : [300]
+   -> our split uses non-overlapping contiguous blocks in build order.
+
+2) Which row's features explain build i's CPU time?  (train+val builds only)
+ feature_row_offset                        meaning  val_RMSE  val_MAE  val_R2  eta2_in_sample  eta2_chance_95pct
+                 -2             two builds earlier  5680.104 3894.496  -0.059           0.023              0.080
+                 -1 previous build (OUR alignment)  4389.329 2733.829   0.367           0.280              0.088
+                  0    same build (paper/original)  5764.419 3968.724  -0.091           0.036              0.084
+                  1                     next build  5683.899 3833.582  -0.055           0.043              0.088
+                  2               two builds later  5762.653 3890.201  -0.076           0.030              0.092
+   reference: predicting the training mean gives val RMSE 5520
+
+3) 'site/' rows by labelled file type (features only):
+type    C/C++  JAVA  Starlark  python
+prefix                               
+site/      20    40         0       0
+   'site/' holds web pages (.html/.css/.js), yet many rows are labelled C/C++ and none HTML/CSS/JS:
+   substring matching in extractBuildInfo.py (e.g. '.c' inside '.css'). Documented as a limitation.
+
+   Also: only 8 of the paper's 11 prefixes and 4 of its 5 types ever occur in the data.

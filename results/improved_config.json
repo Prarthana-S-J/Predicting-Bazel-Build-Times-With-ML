@@ -1,0 +1,11 @@
+{
+  "tag": "improved",
+  "dataset": "aligned",
+  "features": "prefix+type+cross",
+  "alpha": 0.001,
+  "val_RMSE": 4263.562922425403,
+  "val_MAE": 2731.6715909629775,
+  "val_R2": 0.40314987560073945,
+  "n_train": 299,
+  "n_val": 100
+}

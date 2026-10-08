@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+# Raw Bazel build-event JSON files from the original repo (55 MB, not needed: CPU times are already in CPUTimes.csv)
+Build_Info/

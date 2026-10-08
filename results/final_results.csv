@@ -1,0 +1,5 @@
+Model,Val RMSE,Test RMSE,Test MAE,Test R2
+Untrained model (predicts 0) - what the paper's test_model() effectively evaluates,,7458.845237032338,4707.07,-0.661825610983231
+Mean predictor (training mean),,5820.68953402739,4298.534949832776,-0.012024732611607192
+Model A: Paper baseline (original pairing),5517.670852260456,5817.732267222966,4298.633021184342,-0.010996652739019286
+Model B: Improved (corrected alignment),4263.562922425403,5353.89588803045,3644.510137779065,0.14378644540276297
